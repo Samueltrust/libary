@@ -1,0 +1,35 @@
+img {
+  width: 500px;
+  height: auto;
+}
+h1 {
+  color: darkred;
+}
+
+h2 {
+  font-family: "Times New Roman", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+
+ul, 
+li {
+  font-size: 18px;
+}
+
+.container {
+  background-color: #FFFAFA;
+}
+
+p {
+  background-color: green;
+  color: white;
+}
+
+button {
+  background-color: orange;
+  font-size: 18px;
+}
