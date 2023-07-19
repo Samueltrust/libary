@@ -1,0 +1,96 @@
+.classed {
+  background-color: pink;
+  font-family: Verdana, sans-serif;
+}
+
+#classes {
+  color: blue;
+  font-size: 36px;
+}
+
+#clas {
+  font-size: 24px;
+}
+
+#classe {
+  background-color: lightgreen;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.welcome {
+  background-color: black;
+  color: white;
+}
+
+.will {
+  background-color: yellow;
+}
+
+.welcome,
+.will {
+  font-size: 28px;
+  font-family: Helvetica, "Times New Roman", sans-serif;
+}
+
+.avatar.proportioned {
+  height: auto;
+  width: 300px;
+}
+
+.avatar.distorted {
+  height: 400px;
+  width: 200px;
+}
+
+.container .text {
+  background-color: yellow;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+.para,
+.small-para {
+  color: hsl(0, 100%, 50%);
+}
+
+.para.small-para {
+  font-size: 15px;
+}
+
+.para {
+  font-size: 22px;
+}
+
+.confirm {
+  background: green;
+  color: white;
+  font-size: 20px;
+  border-color: white;
+} 
+
+.button.cancel {
+  background-color: #ffc0cb;
+  color: black;
+  font-size: 20px;
+  border-color: white;
+}
+
+.text.child {
+  color: red;
+  font-size: 14px;
+}
+
+.text {
+  color: green;
+  font-size: 28px;
+}
+
