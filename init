@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charaset="UTF-8">
+    <meta name="viewport" content="width=device-width", inital scale="1.0">
+    <title>Underated</title>
+    <link rel="stylesheet" href="inhub.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <div class="content-c">
+          <h1>Sweet Strawberry Cupcake</h1>
+          <p><em>Cotton candy halvah I love muffin soufflé</em> I love I love dessert. Cupcake I love marshmallow apple pie candy canes wafer. Dragée sweet roll cake dragée pie.</p>
+        </div>
+      </header>
+
+      <div class="content-o">
+        <p>Tart pastry sesame snaps soufflé I love cotton candy muffin I love sweet. Wafer sweet roll candy pastry chocolate. Powder biscuit cotton candy fruitcake carrot cake shortbread.<strong> I love lemon drops marshmallow tootsie roll chocolate.</strong> Dragée sugar plum oat cake sesame snaps apple pie candy. Gingerbread toffee topping gummies biscuit pie biscuit. Candy fruitcake chupa chups lollipop pie. Cotton candy brownie tootsie roll biscuit oat cake danish bonbon I love cake.</p>
+      
+      <h2>Donut candy canes cotton candy</h2>
+      <p><strong><em>Cupcake dragée toffee gummies sugar plum I love chupa chups.</em></strong> Cake fruitcake soufflé biscuit toffee cheesecake. Cake caramels jujubes gummies cake. Shortbread jelly beans candy sweet icing. Jujubes cheesecake macaroon marshmallow tiramisu. Bonbon topping dessert candy pie caramels chocolate cake icing. I love donut shortbread carrot cake soufflé cheesecake candy. Sweet liquorice toffee sugar plum ice cream dessert wafer jujubes gingerbread. Croissant chocolate bonbon biscuit muffin sweet. Carrot cake I love icing pudding	 wafer.</p>
+      
+      <p><em>Carrot cake tart pie cotton candy chocolate.</em> Cheesecake cupcake icing sesame snaps tiramisu pudding gingerbread. Shortbread chocolate cake soufflé cake biscuit <strong>cupcake muffin sweet roll.</strong> Fruitcake jujubes gummi bears lollipop biscuit jujubes. Sugar plum cake icing chupa chups gingerbread chocolate sweet bonbon sesame snaps. Croissant chupa chups caramels chocolate cake bonbon pie jelly-o. I love I love topping donut cake macaroon fruitcake topping.</p>
+      
+      <h3>GingerBread gummi bears</h3>
+      <p><em>Tart biscuit sweet chupa chups gummies powder dessert oat cake.</em> Tiramisu I love biscuit macaroon muffin ice cream. I love cake icing muffin danish lollipop. Tootsie roll gummies wafer bonbon chocolate bar cookie shortbread. Jujubes powder I love pudding halvah tart donut jelly cheesecake. <strong>Candy soufflé muffin liquorice jujubes.</strong> Muffin gummi bears ice cream sweet roll jelly apple pie halvah chocolate bar. Gummies tootsie roll sweet roll candy I love. Sugar plum bonbon muffin I love gummi bears jelly donut danish I love.</p>
+      
+      <p><strong><m>Cookie halvah sweet roll</em></strong> marshmallow chocolate bar brownie shortbread. Tart pastry marzipan jelly beans dessert fruitcake. Dragée I love jelly macaroon lollipop jelly-o I love. Pie chupa chups bear claw bonbon toffee. I love carrot cake cookie I love bear claw cotton candy. Muffin oat cake jujubes lemon drops croissant jelly beans I love dragée lollipop. Powder gummi bears fruitcake I love cheesecake. Fruitcake I love apple pie danish carrot cake. Chocolate shortbread pastry fruitcake biscuit cotton candy fruitcake oat cake dessert. Topping candy danish pie jujubes.</p> 
+      </div>
+    </main>
+  </body>
+
+</html>
