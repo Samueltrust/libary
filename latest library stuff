@@ -1,0 +1,114 @@
+* {
+    line-height: 1.5;
+    outline: 1px dotted red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #c2a3d1;     
+}
+
+img {
+    width: 200px;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+}
+
+p  {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: darkred;
+}
+
+.recipe-card {
+    width: 800px;
+    background-color: #FFFAFA;
+    margin: 20px auto;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+}
+
+.recipe-content {
+    padding: 20px;   
+    display: inline-block;
+    width: 580px;
+}
+
+.recipe-card h2,
+.recipe-card a {
+    text-transform: uppercase;
+}
+
+.recipe-card.feature {
+    border: 2px solid darkred;
+}
+
+ul li h2 { 
+    font-size: 16px;
+}
+
+.recipe-card a {
+    background-color: #fc9400;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 10px;
+}
+
+.highlight {
+    background-color: lightpink;
+    color: darkred;
+    padding: 0px 3px;
+    margin: 0px -3px;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Card</title>
+    <link rel="stylesheet" href="styles.css" />
+ </head>
+ <body>
+    <div class="container" id="container">
+        <div class="recipe-card feature">
+            <img
+            src="zen.jpg"
+            alt="Red Velvet Cupcake - Photo by luisana zerpa on Unsplash"
+            />
+            <div class="recipe-content">
+                <h1>Red Velvet Cupcakes</h1>
+                <p>This red velvet cupcake recipe yields soft, fluffy cupcakes <span class="highlight">with a rich chocolate flavor</span> and a vibrant red color. Topped with a creamy and tangy cream cheese frosting, these cupcakes are perfect for any occasion and are sure to impress your guests.</p>
+                <section class="recipe-info">
+                    <ul>
+                        <li class="recipe-prep-time">
+                            <h2>Preparation Time</h2>
+                            <p>30 min</p>
+                        </li>
+                        <li>
+                            <h2>Total Time</h2>
+                            <p>40 min</p>
+                        </li>
+                        <li>
+                            <h2>Yield</h2>
+                            <p>40 min</p>
+                        </li>
+                    </ul>
+                </section>
+              <a href="https://www.azlyrics.com/lyrics/drake/whatsnext.html">View recipe</a>    
+            </div>                            
+        </div>
+  </div>
+ </body>
+</html>
