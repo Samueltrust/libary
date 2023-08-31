@@ -31,6 +31,22 @@ body {
   height: 24px;
   width: 20px;
 }
+
+.continue {
+  border-radius: 20px;
+  border: 1px solid blue;
+  color: white;
+  background-color: royalblue;
+}
+
+.cancel {
+  border-radius: 20px;
+  border: 1px solid blue;
+  color: royalblue;
+  background-color: white;
+}
+
+
 but: royalblue-background, white
 
 
