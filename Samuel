@@ -1,0 +1,65 @@
+* {
+  outline: 1px solid red;
+}
+
+body {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 450px;
+  padding: 16px;
+}
+
+.icon {
+  color: royalblue;
+  background-color: lavendar;
+  height: 24px;
+  width: 20px;
+}
+
+.close-button { 
+  color: #eee;
+  background-color: #888;
+  height: 24px;
+  width: 20px;
+}
+but: royalblue-background, white
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Project</title>
+  </head>
+  <body>
+    <div class= "container">
+      <div class="icon">!</div>
+      <div class="header">Are you sure you want to do that?
+      <div class= "close-button">X</div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur excepturi id soluta, numquam minima rerum doloremque eveniet aspernatur beatae commodi. Cupiditate recusandae ad repellendus quidem consectetur sequi amet aspernatur cumque!</p>
+      <button class="continue">Continue</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </body>
+</html>
