@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Project</title>
+  </head>
+        
+  <body>
+    <div class="header">
+      <div class="title-bar">
+        <div>Header Logo</div>
+          <ul class="list">
+            <li>header link one</li>
+            <li>header link two</li>
+            <li>header link three</li>
+          </ul>
+        </div>
+      
+      <div class="header-content">
+        <h1>This website is awesome</h1>
+        <p>This website has some subtext that goes here under the main tile. It's a smaller font and the color is lower contrast</p>
+        <button>Signup</button>
+        <img src="logo.jpg" alt="A clock">
+      </div>
+    </div>
+        
+    <div class="content">
+      <div class="top">
+        <div>Some random information.</div>
+
+        <div class="boxes">
+          <div class="empty"></div>
+          <p>this is some subtext under an illustration or image</p>
+          <div class="empty"></div>
+          <p>this is some subtext under an illustration or image</p>
+          <div class="empty"></div>
+          <p>this is some subtext under an illustration or image</p>
+          <div class="empty"></div>
+          <p>this is some subtext under an illustration or image</p>
+        </div>
+        
+      <div class="middle">
+        <p>This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.<p>
+        <p>-Thor, God of Thunder</p>
+      </div>  
+    
+      <div class=end>
+        <div class="container">
+          <h1>Call to action! It's time!<h1>
+          <p>Sign up for our product by clicking that button right over there!</p>
+          <button>Sign up</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div>Copyright &#169; The Odin Project 2021
+    </div>
+  </body>
+</html>
