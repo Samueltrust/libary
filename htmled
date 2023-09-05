@@ -10,22 +10,26 @@
         
   <body>
     <div class="header">
-      <div class="title-bar">
-        <h1 class="header-logo">Header Logo</h1>
+      <div class="omega">
+        <div class="title-bar">
+          <h1 class="header-logo">Header Logo</h1>
           <ul class="list">
             <li>header link one</li>
             <li>header link two</li>
             <li>header link three</li>
           </ul>
-      </div>
-      
-      <div class="header-content">
-        <div class="sign">
-          <h1>This website is awesome</h1>
-          <p>This website has some subtext that goes here under the main tile. It's a smaller font and the color is lower contrast</p>
-          <button>Sign up</button>
         </div>
-        <div class="placeholder">this is a placeholder for an image</div>
+      </div>
+
+      <div class="alpha">    
+        <div class="header-content">
+          <div class="sign">
+            <h1>This website is awesome</h1>
+            <p>This website has some subtext that goes here under the main tile. It's a smaller font and the color is lower contrast</p>
+            <button>Sign up</button>
+          </div>
+          <div class="placeholder">this is a placeholder for an image</div>
+        </div>
       </div>
     </div>
         
