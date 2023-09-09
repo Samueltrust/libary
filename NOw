@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let login = prompt("Enter your login details:");
+
+        if (login === "Admin") {
+           let password = prompt("Enter the password:");
+        
+           if (password === "null" || password === "") {
+           alert("Wrong Password.");
+           } else if (password === "Rebel") {
+            alert("Welcome");
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUkcmljayBhc3RsZXkgbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXAg";
+           } else {
+            alert("Try again fool");
+           }
+
+        } else {
+            alert("Wrong Username");
+        }
+    </script>
+</body>
+</html>
