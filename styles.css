@@ -1,0 +1,26 @@
+* {
+    border: 1px solid red;
+}
+
+body {
+    background-color: black;
+}
+
+.calBody {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 8px;
+}
+
+.layer {
+    display: flex;
+    flex: 1 1 auto;
+    width: 400px;
+}
+
+.button {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+}
