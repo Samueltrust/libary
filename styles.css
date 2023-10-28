@@ -12,6 +12,7 @@ body {
     margin-top: 250px;
 }
 
+
 .result {
     display: flex;
     justify-content: flex-end;
@@ -37,6 +38,22 @@ body {
     gap: 8px;
 }
 
+.flash {
+    animation: flash 0.5s;
+  }
+
+  @keyframes flash {
+    0% {
+      background-color: white;
+    }
+    50% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: white;
+    }
+  }
+
 .button {
     font-size: 32px;
     height: 80px;
@@ -54,6 +71,11 @@ body {
 
 .yellow-button {
     background-color: #FF9F0A;
+}
+
+.arithmetic {
+    background-color: white;
+    color: #FF9F0A;
 }
 
 .zero {
