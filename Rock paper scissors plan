@@ -1,0 +1,8 @@
+When x is clicked
+we select a random number from 0 - 1
+if the number is between (1/2 == rock) or (2/3 == scissors) or (1/kl == paper)
+if user input and computer input is the same i.e on rock or better or worse
+create wins, losses and ties and update accordingly
+we print x
+and print you = ... computer = ...
+
