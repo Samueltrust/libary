@@ -1,125 +1,42 @@
-const numbers = document.querySelectorAll('.numbers');
-const result = document.querySelector('.result span');
-const symbols = document.querySelectorAll('.symbol');
-const equals = document.querySelector('.equals');
-const clear = document.querySelector('.clear');
-const negative = document.querySelector('.plus-minus'); 
-const percent = document.querySelector('.percent');
+let rock = document.querySelector('.rock');
+let paper = document.querySelector('.paper');
+let scissors = document.querySelector('.scissors');
+let result = document.querySelector('.result');
+let inputs = document.querySelector('.inputs');
+let scores = document.querySelector('.scores');
 
 
-let firstValue = "";
-let secondValue = "";
-let selectedSymbol = "";
 
-for(let i = 0; i < numbers.length; i++) {
-    numbers[i].addEventListener('click', (e) => {
-        let atr = e.target.getAttribute('value');
-        if (selectedSymbol == "") {
-        getFirstValue(atr); 
-        } else {
-        getSecondValue(atr);
-        }
-    })
+let randomNumber = Math.floor(Math.random() * 3) + 1;
+let computerMove;
+
+if (randomNumber === 1) {
+    computerMove = rock;
+} else if (randomNumber === 2) {
+    computerMove = paper;
+} else if (randomNumber === 3) {
+    computerMove = scissors
 }
 
+function calculation(value) {
+    let wins = 0;
+    let loss = 0;
+    let tie = 0;
 
-function flashEffect() {
-    // Add the "flash" class to the button
-    document.querySelector('.click').classList.add('flash');
-
-    // Remove the "flash" class after a short delay (500 milliseconds)
-    setTimeout(function() {
-      document.querySelector('button').classList.remove('flash');
-    }, 500);
-  }
-
-function getFirstValue(el) {
-    result.innerHTML = "";
-    firstValue += el;
-    result.innerHTML = firstValue;
-}
-
-function getSecondValue(el) {
-    if(firstValue != "" && selectedSymbol != "") {
-    secondValue += el;
-    result.innerHTML = secondValue;
-    secondValue = +secondValue;
-    }
-}
-
-function getSymbol(el) {
-    for(let i = 0; i < symbols.length; i++) {
-        symbols[i].addEventListener('click', (e) => {
-            selectedSymbol = e.target.getAttribute('value');
-        })
-    }
-}
-getSymbol();
-
-equals.addEventListener('click', () => {
-    result.innerHTML = "";
-    if(selectedSymbol === 'add') {
-        resultValue = parseFloat(firstValue) + parseFloat(secondValue);
-    } else if (selectedSymbol === 'minus') {
-        resultValue = parseFloat(firstValue) - parseFloat(secondValue);
-    } else if (selectedSymbol === 'divide') {
-        resultValue = parseFloat(firstValue) / parseFloat(secondValue);
-    } else if (selectedSymbol === 'multiply') {
-        resultValue = parseFloat(firstValue) * parseFloat(secondValue);
-    }
-
-    if (resultValue)
-    result.innerHTML = resultValue;
-    firstValue = resultValue;
-    secondValue = "";
-    
-})
-
-negative.addEventListener('click', () => {
-    result.innerHTML = "";
-    if(firstValue != "") {
-        resultValue = -firstValue;
-        firstValue = resultValue;
-    }
-
-    /*
-    if(secondValue != "") {
-        secondValue = -secondValue;
+    if (computerMove === rock && value === rock || computerMove === paper && value === paper || computerMove === scissors && value === scissors) {
+        tie += 1;
+        result.textContent = "Tie.";
+        inputs.textContent = `You ${value}  ${computerMove} Computer`;
+        scores.textContent = `Wins: ${wins}, Losses: ${loss} Ties: ${tie}`;
     } 
-    */
 
-    if(firstValue != "" && secondValue != "" && selectedSymbol != "") {
-        resultValue = -resultValue;
-    }
 
-    result.innerHTML = resultValue;
-});
-
-percent.addEventListener('click', () => {
-    result.innerHTML = "";
-    if(firstValue != "") {
-        resultValue = firstValue / 100;
-        firstValue = resultValue;
-    }
-
-        /*
-    if(secondValue != "") {
-        secondValue = -secondValue;
+    if (computerMove === rock && value === scissors || computerMove === paper && value === rock || computerMove === scissors && value === paper) {
+        loss -= 1;
     } 
-    */
     
-    if(firstValue != "" && secondValue != "" && selectedSymbol != "") {
-        resultValue = resultValue / 100;
+    
+    if (computerMove === rock && value === paper || computerMove === paper && value === scissors || computerMove === scissors && value === rock) {
+        wins += 1;
     }
-
-    result.innerHTML = resultValue;
-});
-
-clear.addEventListener('click', () => {
-    result.innerHTML = 0;
-
-    firstValue = "";
-    secondValue = "";
-    selectedSymbol = "";
-    resultValue = 0;
-});
+}
