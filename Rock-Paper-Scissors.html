@@ -1,48 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles.css">
+   <title>Document</title>
 </head>
 <body>
-    <div class="result">
-        <span>0</span>
-    </div>
+   <h1>Rock Paper Scissors</h1>
+   <div class="rock"><img src="rock-emoji.png" alt="rock"></div>
+   <div class="paper"><img src="paper-emoji.png" alt="paper"></div>
+   <div class="scissors"><img src="scissors-emoji.png" alt="scissors"></div>
 
-    <div class="calKeys">
-      <div class="box"> 
-         <button class="grey-button button clear click">AC</button>
-         <button class="grey-button button plus-minus symbol click" value="+/-">+/-</button>
-         <button class="grey-button button percent click" value="%">%</button>
-         <button class="yellow-button button division symbol" value="divide">÷</button>
-      </div>
-      <div class="box">
-         <button class="numbers button click" value="7">7</button>
-         <button class="numbers button click" value="8">8</button>
-         <button class="numbers button click" value="9">9</button>
-         <button class="yellow-button button multiply symbol" value="multiply">x</button>
-      </div>
-      <div class="box">
-         <button class="numbers button click" value="4">4</button>
-         <button class="numbers button click" value="5">5</button>
-         <button class="numbers button click" value="6">6</button>
-         <button class="yellow-button button minus symbol" id="arithmeticMinus" value="minus">-</button>
-      </div>
-      <div class="box">
-         <button class="numbers button click" value="1">1</button>
-         <button class="numbers button click" value="2">2</button>
-         <button class="numbers button click" value="3">3</button>
-         <button class="yellow-button button plus symbol" value="add">+</button>
-      </div>
-      <div class="box">
-         <button class="numbers button zero click" value="0">0</button>
-         <button class="numbers button dot">.</button>
-         <button class="yellow-button button equals click">=</button>
-      </div>
-    </div>
-
-<script src="script.js"></script>
+   <p class="result"></p>
+   <p class="inputs"></p>
+   <p class="scores"></p>
+   <button class="reset">Reset Score</button>
 </body>
 </html>
