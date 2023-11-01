@@ -1,6 +1,8 @@
+/* 
 * {
     border: 1px solid red;
 }
+*/
 
 body {
     color: white;
@@ -21,15 +23,31 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 img {
     width: 50px;
     height: 50px;
+    cursor: pointer;
+}
+
+.result {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.scores {
+    margin-top: 60px;
+    margin-bottom: 16px;
 }
 
 .reset {
     color: black;
     background-color: white;
     padding: 8px 15px;
+    cursor: pointer;
+    font-size: 15px;
 }
