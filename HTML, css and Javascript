@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <h1>Etch A Sketch</h1>
+
+        <div class="container">
+            <div class="controlPanel">
+                <input type="color" class="colourWheel" value="#333333"/>
+                <button class="classicTone">Classic mode</button>
+                <button class="rainbowTone">Rainbow mode</button>
+                <button class="eraser">Eraser</button>
+                <button class="reset">Clear</button>
+                <div class="sliderValue">1 x 1</div>
+                <input type="range" min="1" max="64" step="1" value="32" class="gridSlider"/>
+            </div>
+            
+            <div class="gridBoxes"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+css
+* {
+  border: 1px solid red;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 70px;
+    color: #333;
+    text-align: center;
+}
+
+.background {
+    background-color: #ededed;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+.controlPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type='color'] {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 80px;
+    border: none;
+}
+
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.classicTone, .rainbowTone,
+.eraser, .reset {
+    box-sizing: border-box;
+    width: 200px;
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font: 16px Roboto, sans-serif;
+}
+
+
+input[type="range"] {
+    width: 150px;
+    height: 6px;
+    -webkit-appearance: none;
+    background: #EDEDED;
+    outline: 1px solid #333;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #333;
+    cursor: pointer;
+}
+
+.gridBoxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    border: none;
+    width: 500px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fefefe;
+}
+
+.box {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: 1px solid blue;
+}
+
+
+
+
+
+
+
+
+
+Javascript
+let gridBoxes = document.querySelector('.gridBoxes');
+let box;
+
+function createBoxes() {
+    for(let i = 0; i < 10; i++) {
+        box = document.createElement("div");
+        
+        box.className = "box";
+        gridBoxes.appendChild(box);     
+    }
+}
+
+createBoxes();
