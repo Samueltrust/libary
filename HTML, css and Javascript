@@ -13,12 +13,14 @@
         <div class="container">
             <div class="controlPanel">
                 <input type="color" class="colourWheel" value="#333333"/>
-                <button class="classicTone">Classic mode</button>
-                <button class="rainbowTone">Rainbow mode</button>
-                <button class="eraser">Eraser</button>
+                <button class="classicTone modes">Classic mode</button>
+                <button class="rainbowTone modes">Rainbow mode</button>
+                <button class="eraser modes">Eraser</button>
                 <button class="reset">Clear</button>
+                <div class="slider">
                 <div class="sliderValue">1 x 1</div>
-                <input type="range" min="1" max="64" step="1" value="32" class="gridSlider"/>
+                <input type="range" min="1" max="64" step="1" value="17" class="gridSlider"/>
+                </div>
             </div>
             
             <div class="gridBoxes"></div>
@@ -38,101 +40,133 @@
 
 css
 * {
-  border: 1px solid red;
-}
+    border: 1px solid red;
+  }
+  
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 70px;
+      color: #333;
+      text-align: center;
+  }
+  
+  .background {
+      background-color: #ededed;
+      padding: 20px;
+      border-radius: 10px;
+  }
+  
+  .container {
+      display: flex;
+      gap: 10px;
+  }
+  
+  .controlPanel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+  }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  .colourWheel  {
+    margin-top: 20px;
+    cursor: pointer;
+  }
 
-h1 {
-    font-family: 'Lobster', cursive;
-    font-size: 70px;
-    color: #333;
+  .colourWheel:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  
+  input[type='color'] {
+      -webkit-appearance: none;
+      width: 80px;
+      height: 80px;
+      border: none;
+  }
+  
+  input[type='color']::-webkit-color-swatch {
+      border: none;
+      border-radius: 50px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s;
+  }
+  
+  .classicTone, .rainbowTone,
+  .eraser, .reset {
+      box-sizing: border-box;
+      width: 200px;
+      height: 40px;
+      padding: 5px 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+      font: 16px Roboto, sans-serif;
+      -webkit-transition-duration: 0.1s;
+      transition-duration: 0.1s;
+  }
+
+  .classicTone:hover, .rainbowTone:hover, .eraser:hover, .reset:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .colourChange {
+    background-color: #333;
+    color: #EDEDED;
+  }
+  
+  .slider {
     text-align: center;
-}
+  }
 
-.background {
-    background-color: #ededed;
-    padding: 20px;
-    border-radius: 10px;
-}
+  .sliderValue {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
 
-.container {
-    display: flex;
-    gap: 10px;
-}
-
-.controlPanel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-input[type='color'] {
-    -webkit-appearance: none;
-    width: 80px;
-    height: 80px;
-    border: none;
-}
-
-input[type='color']::-webkit-color-swatch {
-    border: none;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.classicTone, .rainbowTone,
-.eraser, .reset {
-    box-sizing: border-box;
-    width: 200px;
-    height: 40px;
-    padding: 5px 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    cursor: pointer;
-    font: 16px Roboto, sans-serif;
-}
-
-
-input[type="range"] {
-    width: 150px;
-    height: 6px;
-    -webkit-appearance: none;
-    background: #EDEDED;
-    outline: 1px solid #333;
-    border-radius: 5px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background: #333;
-    cursor: pointer;
-}
-
-.gridBoxes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    border: none;
-    width: 500px;
-    height: 500px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #fefefe;
-}
-
-.box {
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    border: 1px solid blue;
-}
+  input[type="range"] {
+      width: 150px;
+      height: 6px;
+      -webkit-appearance: none;
+      background: #EDEDED;
+      outline: 1px solid #333;
+      border-radius: 5px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      background: #333;
+      cursor: pointer;
+  }
+  
+  .gridBoxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      border: none;
+      width: 500px;
+      height: 500px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: #fefefe;
+  }
+  
+  .box {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border: 1px solid blue;
+  }  
 
 
 
@@ -143,16 +177,61 @@ input[type="range"]::-webkit-slider-thumb {
 
 
 Javascript
-let gridBoxes = document.querySelector('.gridBoxes');
-let box;
+    let gridBoxes = document.querySelector('.gridBoxes');
+    let classicTone = document.querySelector('.classicTone');
+    let rainbowTone = document.querySelector('.rainbowTone');
+    let eraser = document.querySelector('.eraser');
+    let modes = document.querySelectorAll('.modes');
+    let reset = document.querySelector('.reset');
+    let box;
+    let letters;
+    let color;
+    let containerBox;
 
-function createBoxes() {
-    for(let i = 0; i < 10; i++) {
-        box = document.createElement("div");
-        
-        box.className = "box";
-        gridBoxes.appendChild(box);     
+     
+    modes.forEach(value => {
+        value.addEventListener('click', function() {
+            document.querySelector('.colourChange')?.classList.remove('colourChange');
+            value.classList.add('colourChange');
+        })
+    })
+
+    reset.addEventListener('click', function() {
+        myElement.classList.add('colourChange');
+
+        setTimeout(function() {
+            myElement.classList.remove('colourChange');
+        }, 1000);
+
+        containerBox.forEach(function (value) {
+                value.style.backgroundColor = '#FFFFFF';
+        });
+    });
+
+    function createBoxes() {
+        for(let i = 0; i < 32; i++) {
+            box = document.createElement("div");
+            
+            box.className = "box";
+            gridBoxes.appendChild(box);
+            containerBox = document.querySelectorAll('.box');     
+        }
     }
-}
 
-createBoxes();
+    createBoxes();
+
+    containerBox.forEach(function (value) {
+        value.addEventListener('click', function() {
+            value.style.backgroundColor = getRandomColor();
+        });
+    });
+
+    function getRandomColor() {
+        letters = '0123456789ABCDEF';
+        color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+    }
