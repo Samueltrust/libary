@@ -18,7 +18,7 @@
                 <button class="eraser modes">Eraser</button>
                 <button class="reset">Clear</button>
                 <div class="slider">
-                <div class="sliderValue">1 x 1</div>
+                <div class="sliderValue">17 x 17</div>
                 <input type="range" min="1" max="64" step="1" value="17" class="gridSlider"/>
                 </div>
             </div>
@@ -42,11 +42,23 @@ css
 * {
     border: 1px solid red;
   }
+
+@keyframes changeBackground {
+    0% { background-image: linear-gradient(to bottom right, tan, red, teal); }
+    25% { background-image: linear-gradient(to bottom right, red, teal, tan); }
+    50% {background-image: linear-gradient(to bottom right, teal, tan, red); }
+    75% {background-image: linear-gradient(to bottom right, tan, red, teal); }
+    100% {background-image: linear-gradient(to bottom right, teal, red, tan);}
+}
   
   body {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      background-image: linear-gradient(to bottom right, tan, red, teal);
+      /* conic-gradient(tan, red, teal); */
+      animation: changeBackground 5s infinite;
   }
   
   h1 {
@@ -178,60 +190,68 @@ css
 
 Javascript
     let gridBoxes = document.querySelector('.gridBoxes');
-    let classicTone = document.querySelector('.classicTone');
-    let rainbowTone = document.querySelector('.rainbowTone');
-    let eraser = document.querySelector('.eraser');
-    let modes = document.querySelectorAll('.modes');
-    let reset = document.querySelector('.reset');
-    let box;
-    let letters;
-    let color;
-    let containerBox;
+let classicTone = document.querySelector('.classicTone');
+let rainbowTone = document.querySelector('.rainbowTone');
+let eraser = document.querySelector('.eraser');
+let modes = document.querySelectorAll('.modes');
+let reset = document.querySelector('.reset');
+let sliderValue = document.querySelector('.sliderValue');
+let gridSlider = document.querySelector('.gridSlider');
+let box;
+let letters;
+let color;
+let containerBox;
+let sliderCurrentValue;
 
-     
-    modes.forEach(value => {
-        value.addEventListener('click', function() {
-            document.querySelector('.colourChange')?.classList.remove('colourChange');
-            value.classList.add('colourChange');
-        })
+ 
+modes.forEach(value => {
+    value.addEventListener('click', function() {
+        document.querySelector('.colourChange')?.classList.remove('colourChange');
+        value.classList.add('colourChange');
     })
+})
 
-    reset.addEventListener('click', function() {
-        myElement.classList.add('colourChange');
+reset.addEventListener('click', function() {
+    myElement.classList.add('colourChange');
 
-        setTimeout(function() {
-            myElement.classList.remove('colourChange');
-        }, 1000);
-
-        containerBox.forEach(function (value) {
-                value.style.backgroundColor = '#FFFFFF';
-        });
-    });
-
-    function createBoxes() {
-        for(let i = 0; i < 32; i++) {
-            box = document.createElement("div");
-            
-            box.className = "box";
-            gridBoxes.appendChild(box);
-            containerBox = document.querySelectorAll('.box');     
-        }
-    }
-
-    createBoxes();
+    setTimeout(function() {
+        myElement.classList.remove('colourChange');
+    }, 1000);
 
     containerBox.forEach(function (value) {
-        value.addEventListener('click', function() {
-            value.style.backgroundColor = getRandomColor();
-        });
+            value.style.backgroundColor = '#FFFFFF';
     });
+});
 
-    function getRandomColor() {
-        letters = '0123456789ABCDEF';
-        color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-
-        return color;
+function createBoxes() {
+    for(let i = 0; i < 32; i++) {
+        box = document.createElement("div");
+        
+        box.className = "box";
+        gridBoxes.appendChild(box);
+        containerBox = document.querySelectorAll('.box');     
     }
+}
+
+createBoxes();
+
+containerBox.forEach(function (value) {
+    value.addEventListener('click', function() {
+        value.style.backgroundColor = getRandomColor();
+    });
+});
+
+function getRandomColor() {
+    letters = '0123456789ABCDEF';
+    color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}
+
+gridSlider.addEventListener("input", () => {
+    sliderCurrentValue = gridSlider.value;
+    sliderValue.innerHTML = `${sliderCurrentValue} X ${sliderCurrentValue}`;
+}); 
