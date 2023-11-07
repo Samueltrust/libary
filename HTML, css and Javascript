@@ -13,8 +13,8 @@
         <div class="container">
             <div class="controlPanel">
                 <input type="color" class="colourWheel" value="#333333"/>
-                <button class="classicTone modes">Classic mode</button>
-                <button class="rainbowTone modes">Rainbow mode</button>
+                <button class="classicTone modes" onclick ="setColor(black);">Classic mode</button>
+                <button class="rainbowTone modes" onclick ="setColor(random);">Rainbow mode</button>
                 <button class="eraser modes">Eraser</button>
                 <button class="reset">Clear</button>
                 <div class="slider">
@@ -36,18 +36,17 @@
 
 
 
-
 css
 * {
     border: 1px solid red;
   }
 
 @keyframes changeBackground {
-    0% { background-image: linear-gradient(to bottom right, tan, red, teal); }
-    25% { background-image: linear-gradient(to bottom right, red, teal, tan); }
-    50% {background-image: linear-gradient(to bottom right, teal, tan, red); }
-    75% {background-image: linear-gradient(to bottom right, tan, red, teal); }
-    100% {background-image: linear-gradient(to bottom right, teal, red, tan);}
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
 }
   
   body {
@@ -56,8 +55,9 @@ css
       align-items: center;
       height: 100vh;
       background-image: linear-gradient(to bottom right, tan, red, teal);
+      background-size: 200% 200%;
       /* conic-gradient(tan, red, teal); */
-      animation: changeBackground 5s infinite;
+      animation: changeBackground 5s infinite linear;
   }
   
   h1 {
@@ -185,6 +185,7 @@ css
 
 
 
+
 Javascript
 let classicTone = document.querySelector('.classicTone');
 let rainbowTone = document.querySelector('.rainbowTone');
@@ -193,7 +194,8 @@ let modes = document.querySelectorAll('.modes');
 let reset = document.querySelector('.reset');
 let sliderValue = document.querySelector('.sliderValue');
 let gridSlider = document.querySelector('.gridSlider');
- 
+let color = "black";
+
 modes.forEach(value => {
     value.addEventListener('click', function() {
         document.querySelector('.colourChange')?.classList.remove('colourChange');
@@ -214,6 +216,8 @@ slider();
 function createBoard(size) {
     let board = document.querySelector(".board");
 
+    board.innerHTML = "";
+
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
@@ -221,6 +225,7 @@ function createBoard(size) {
     
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
+        div.addEventListener('mouseover', colorDiv)
         board.appendChild(div);
     }
 }
@@ -228,4 +233,42 @@ function createBoard(size) {
 createBoard(32);
 
 function changeSize(input) {
+    createBoard(input);
 }
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function ColorDiv() {
+
+}
+
+function setColor(colorChoice) {
+    color = colorChoice;
+}
+
+
+
+
+
+/*
+
+var colorButton = document.getElementById('colorButton');
+
+// Add a click event listener to the button
+colorButton.addEventListener('click', function () {
+    // Generate a random color
+    var randomColor = getRandomColor();
+
+    // Set the button's background color to the random color
+    colorButton.style.backgroundColor = randomColor;
+});
+
+// Function to generate a random color
+*/
