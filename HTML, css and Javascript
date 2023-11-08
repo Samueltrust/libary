@@ -13,17 +13,20 @@
         <div class="container">
             <div class="controlPanel">
                 <input type="color" class="colourWheel" value="#333333"/>
-                <button class="classicTone modes" onclick ="setColor(black);">Classic mode</button>
-                <button class="rainbowTone modes" onclick ="setColor(random);">Rainbow mode</button>
-                <button class="eraser modes">Eraser</button>
-                <button class="reset">Clear</button>
+                <button class="classicTone modes" onclick ="setColor('black')">Classic mode</button>
+                <button class="rainbowTone modes" onclick ="setColor('random')">Rainbow mode</button>
+                <button class="eraser modes" onclick ="setColor('white')">Eraser</button>
+                <button class="reset" onclick ="resetBoxes()">Clear</button>
                 <div class="slider">
                 <div class="sliderValue">17 x 17</div>
                 <input type="range" min="1" max="64" step="1" value="17" class="gridSlider" onchange="changeSize(this.value)"/>
                 </div>
             </div>
             
-            <div class="board"></div>
+            <div>
+                <p class="draw"></p>
+                <div class="board"></div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
@@ -35,19 +38,14 @@
 
 
 
-
 css
-* {
-    border: 1px solid red;
+  @keyframes changeBackground {
+    0% { background-image: linear-gradient(to right, tan, red, teal); }
+    25% { background-image: linear-gradient(to right, red, teal, tan); }
+    50% { background-image: linear-gradient(to right, teal, tan, red); }
+    75% { background-image: linear-gradient(to right, tan, red, teal); }
+    100% { background-image: linear-gradient(to right, red, teal, tan); }
   }
-
-@keyframes changeBackground {
-    0% { background-position: 0% 0%; }
-    25% { background-position: 100% 0%; }
-    50% { background-position: 100% 100%; }
-    75% { background-position: 0% 100%; }
-    100% { background-position: 0% 0%; }
-}
   
   body {
       display: flex;
@@ -55,9 +53,8 @@ css
       align-items: center;
       height: 100vh;
       background-image: linear-gradient(to bottom right, tan, red, teal);
-      background-size: 200% 200%;
       /* conic-gradient(tan, red, teal); */
-      animation: changeBackground 5s infinite linear;
+      animation: changeBackground 10s infinite;
   }
   
   h1 {
@@ -65,17 +62,18 @@ css
       font-size: 70px;
       color: #333;
       text-align: center;
+      margin-top: 20px;
   }
   
   .background {
-      background-color: #ededed;
-      padding: 20px;
+      background-color: #f0f0f0;
+      padding: 40px;
       border-radius: 10px;
   }
   
   .container {
       display: flex;
-      gap: 10px;
+      gap: 30px;
   }
   
   .controlPanel {
@@ -161,6 +159,12 @@ css
       background: #333;
       cursor: pointer;
   }
+
+  .draw {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
   
   .board {
       display: grid;
@@ -169,6 +173,7 @@ css
       height: 500px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       background-color: #fefefe;
+      border-radius: 5px;
   }
   
   .box {
@@ -184,8 +189,6 @@ css
 
 
 
-
-
 Javascript
 let classicTone = document.querySelector('.classicTone');
 let rainbowTone = document.querySelector('.rainbowTone');
@@ -194,7 +197,24 @@ let modes = document.querySelectorAll('.modes');
 let reset = document.querySelector('.reset');
 let sliderValue = document.querySelector('.sliderValue');
 let gridSlider = document.querySelector('.gridSlider');
+let ColorWheel = document.querySelector('.colourWheel');
 let color = "black";
+let click = false;
+
+
+
+document.querySelector("body").addEventListener("click", function(e) {
+    if(e.target.tagName != "BUTTON") {
+        click = !click;
+        let draw = document.querySelector('.draw');
+        if(click) {
+            draw.innerHTML = "You're Allowed To Draw";
+        } else {
+            draw.innerHTML = "You're Not Allowed To Draw";
+        }
+    }
+})
+
 
 modes.forEach(value => {
     value.addEventListener('click', function() {
@@ -225,50 +245,38 @@ function createBoard(size) {
     
     for (let i = 0; i < numDivs; i++) {
         let div = document.createElement("div");
-        div.addEventListener('mouseover', colorDiv)
+        div.classList.add('myClass');
+        div.addEventListener('mouseover', ColorDiv);
         board.appendChild(div);
     }
 }
 
-createBoard(32);
+createBoard(17);
 
 function changeSize(input) {
     createBoard(input);
 }
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
 function ColorDiv() {
-
+    if (click) {
+        if (color == "random") {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        }
+        else if (color == "black"){
+            this.style.backgroundColor = 'black';
+        } else {
+            this.style.backgroundColor = 'white';
+        }
+    }
 }
 
 function setColor(colorChoice) {
     color = colorChoice;
 }
 
-
-
-
-
-/*
-
-var colorButton = document.getElementById('colorButton');
-
-// Add a click event listener to the button
-colorButton.addEventListener('click', function () {
-    // Generate a random color
-    var randomColor = getRandomColor();
-
-    // Set the button's background color to the random color
-    colorButton.style.backgroundColor = randomColor;
-});
-
-// Function to generate a random color
-*/
+function resetBoxes() {
+    let Bdivs = document.querySelectorAll(".myClass");
+    Bdivs.forEach(function(box) {
+        box.style.backgroundColor = "white";
+    });
+}   
