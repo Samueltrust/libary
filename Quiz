@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+            <h1>Basketball Quiz</h1>
+            <div class="position">
+                <span><strong>1</strong> of <strong>8</strong></span>
+                <span class="score">Score: <strong>0</strong></span>
+            </div>
+        </div>
+
+        <div class="image"><img src="Lebron james.jpg"></div>
+
+        <p>Select the teams that Lebron James has played in</p>
+
+        <div class="options">
+            <div>
+                <button>Miami Heat</button>
+                <button>Golden State Warriors</button>
+            </div>
+            <div>
+                <button>Los Angeles Lakers</button>
+                <button>Cleveland Cavaliers</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+CSS
+body {
+    height: 100vh;
+    background-color: #52a7c1;
+    background-image: linear-gradient(315deg, #52a7c1 0%, #b3f6d8 74%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color:  #fff;
+    border-radius: 10px;
+    border: 1px solid  #52a7c1;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.info h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    gap: 15px;
+}
+
+.position span {
+    font-size: 17px;
+    font-weight: 500px;
+}
+
+.score {
+    padding: 8px;
+    background-color: #c2d5db;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-top: 1px solid  #52a7c1;
+    padding: 10px;
+}
+
+.container img {
+    height: 300px;
+    width: auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 30px rgba(0,0,0,.08);
+}
+
+.container p {
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    padding-top: 0px;
+}
+
+.options div {
+    display: flex;
+    gap: 50px;
+}
+
+.options button {
+    padding: 5px 10px;
+    border: 2px solid  #3688a1;
+    border-radius: 8px;
+    width: 400px;
+    height: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.options button:hover {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    background-color: #333;
+    color: white; 
+}
+
+.selected {
+    background-color: green;
+}
+
+
+
+
+
+
+
+
+
+JavaScript
+buttons = document.querySelectorAll('button');
+
+buttons.forEach(value => {
+    value.addEventListener('click', function () {
+        value.classList.toggle("selected");
+    });
+});
