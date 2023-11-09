@@ -222,5 +222,5 @@ let score = 0;
 function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    questionAsked.innerH
+    questionAsked.textContent = `currentQuestion.question;
 }
