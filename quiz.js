@@ -43,14 +43,41 @@ const questions = [
         {text: "Kobe Christopher Bryant", correct: false},
         {text: "Kobe Bean Bryant", correct: true},
         ]
+    },
+    {
+        question: "What year was the NBA founded ?", 
+        answers: [
+            {text: "1700", correct: false},
+            {text: "1900", correct: false},
+            {text: "1946", correct: true},
+            {text: "1955", correct: false},
+        ]
+    },
+    {
+        question: "Which player is featured in the NBA Logo ?", 
+        answers: [
+            {text: "Mr Beast", correct: false},
+            {text: "Jerry West", correct: true},
+            {text: "Micheal Jordan", correct: false},
+            {text: "Magic Johnson", correct: false},
+        ]
     }
-
+    {
+        question: "Which player is this ?", 
+        answers: [
+            {text: "Stephen Curry", correct: true},
+            {text: "Jasyon Tatum", correct: false},
+            {text: "Klay Thompson", correct: false},
+            {text: "Steve Nash", correct: false},
+        ]
+    },
 ];
 
 const questionAsked = document.querySelector(".question");
 const answerButton = document.querySelector(".options");
 const questioNumber = document.querySelector(".questioNumber");
 const Score = document.querySelector(".score");
+const Image = document.querySelector(".image");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -105,14 +132,30 @@ function selectAnswer(e) {
         } else {
             showScore();
         }
-    }, 5000);
+    }, 900);
 }
 
 
-showScore() {
+function showScore() {
+    Image.innerHTML = "";
     answerButton.innerHTML = "";
+
+    questionAsked.innerHTML = `You scored ${score} out of 8`;
+
     const button = document.createElement("button");
-    button.innerHTML = `You scored ${score} out of 8`;
+    button.classList.add("retry");
+    button.textContent = "Retry";
+    answerButton.appendChild(button);
+
+    button.addEventListener('click', retryQuiz)
 } 
+
+function retryQuiz() {
+    score = 0;
+    currentQuestionIndex = 0;
+
+
+    showQuestion();
+}
 
 showQuestion();
